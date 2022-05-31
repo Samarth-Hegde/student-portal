@@ -3,7 +3,6 @@ import SignUp from "./pages/signup/signup";
 import "./App.css";
 import { useState } from "react";
 import UserDetails from "./pages/userDetails/userDetails";
-import Homepage from "./pages/homepage/homepage";
 import JobPosts from "./pages/jobPosts/jobPosts";
 import JobApply from "./pages/jobApply/jobApply";
 
@@ -22,11 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage />}></Route>
-        <Route
-          path="/signup"
-          element={<SignUp handleEmail={handleEmail} />}
-        ></Route>
+        <Route path="/" element={<SignUp handleEmail={handleEmail} />}></Route>
         <Route
           path="/userDetails"
           element={<UserDetails email={email} />}
