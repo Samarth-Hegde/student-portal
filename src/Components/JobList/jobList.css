@@ -1,0 +1,19 @@
+.jobList__label {
+  font-size: large;
+  font-weight: 600;
+  color: rgb(85, 84, 84);
+  margin-right: 5px;
+}
+
+.JobList___description {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.jobList__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid rgb(167, 165, 165);
+  margin: 20px 50px;
+}

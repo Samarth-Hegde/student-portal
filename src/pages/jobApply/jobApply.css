@@ -1,0 +1,14 @@
+.jobApply__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.jobApply__card {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}

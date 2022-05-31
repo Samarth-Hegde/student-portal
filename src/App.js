@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SignUp from "./pages/signup/signup";
+import "./App.css";
+import { useState } from "react";
+import UserDetails from "./pages/userDetails/userDetails";
+import Homepage from "./pages/homepage/homepage";
+import JobPosts from "./pages/jobPosts/jobPosts";
+import JobApply from "./pages/jobApply/jobApply";
 
 function App() {
+  const [email, setEmail] = useState("");
+  const [jobDetails, setJobDetail] = useState({});
+  const handleEmail = (email) => {
+    setEmail(email);
+  };
+
+  const handleJobDetails = (details) => {
+    setJobDetail(details);
+    console.log(jobDetails);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />}></Route>
+        <Route
+          path="/signup"
+          element={<SignUp handleEmail={handleEmail} />}
+        ></Route>
+        <Route
+          path="/userDetails"
+          element={<UserDetails email={email} />}
+        ></Route>
+        <Route
+          path="/jobPosts"
+          element={<JobPosts handleJobDetails={handleJobDetails} />}
+        ></Route>
+        <Route
+          path="/jobApply"
+          element={<JobApply jobDetails={jobDetails} />}
+        ></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
