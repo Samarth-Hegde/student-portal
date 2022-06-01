@@ -38,6 +38,7 @@ function UserDetails(props) {
     if (Object.values(userDetails).length < 7) {
       alert("All fields are compulsory");
     } else {
+      alert("Successfully uploaded");
       await set(dataBaseRef, userDetails);
       nav("/jobPosts");
     }
@@ -77,6 +78,7 @@ function UserDetails(props) {
         variant="outlined"
         sx={{ marginBottom: 2, width: 300 }}
         name="10thperc"
+        type="number"
         onChange={handleChange}
       />
       <TextField
@@ -85,6 +87,7 @@ function UserDetails(props) {
         variant="outlined"
         sx={{ marginBottom: 2, width: 300 }}
         name="12thperc"
+        type="number"
         onChange={handleChange}
       />
       <TextField
@@ -93,6 +96,7 @@ function UserDetails(props) {
         variant="outlined"
         sx={{ marginBottom: 2, width: 300 }}
         name="semester"
+        type="number"
         onChange={handleChange}
       />
       <TextField
@@ -101,6 +105,7 @@ function UserDetails(props) {
         variant="outlined"
         sx={{ marginBottom: 2, width: 300 }}
         name="currentCGPA"
+        type="number"
         onChange={handleChange}
       />
       <Button variant="contained" onClick={handleClick}>
