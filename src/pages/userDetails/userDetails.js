@@ -8,6 +8,7 @@ import {
 import { ref, set } from "firebase/database";
 import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { DataObjectSharp } from "@mui/icons-material";
 
 function UserDetails(props) {
   const [uid, setUid] = useState();
@@ -34,8 +35,12 @@ function UserDetails(props) {
       fireBaseDataBase,
       `jobPortal/students/studentDetails/${uid}`
     );
-    await set(dataBaseRef, userDetails);
-    nav("/jobPosts");
+    if (Object.values(userDetails).length < 7) {
+      alert("All fields are compulsory");
+    } else {
+      await set(dataBaseRef, userDetails);
+      nav("/jobPosts");
+    }
   };
   return (
     <div className="userDetails__container">
